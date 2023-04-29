@@ -1,0 +1,16 @@
+service: easy-trekking-cancel-group
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: dev
+  region: us-east-2
+  memorySize: 128
+functions:
+  app:
+    handler: dist/handler.handler
+    events:
+      - eventBridge:
+          name: event-bridge-easy-trekking-cancel-group
+          description: Event bridge for change group status to cancel
+          schedule: rate(1 day)
+          enabled: true

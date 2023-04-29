@@ -1,0 +1,29 @@
+{
+  "name": "easy-trekking-cancel-group",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon",
+    "build": "tsc",
+    "deploy:remove": "serverless remove --stage dev --region us-east-2",
+    "predeploy": "npm run build",
+    "deploy": "serverless deploy",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "mysql2": "^3.2.0",
+    "typeorm": "^0.3.12"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.8.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}
