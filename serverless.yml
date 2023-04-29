@@ -14,3 +14,7 @@ functions:
           description: Event bridge for change group status to cancel
           schedule: rate(1 day)
           enabled: true
+      - http:
+          path: /
+          method: GET
+          cors: true
