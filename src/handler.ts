@@ -74,7 +74,7 @@ const myHandler = async () => {
         return {
             statusCode: 500,
             body: JSON.stringify({
-                message: 'some error happened'
+                message: 'Some error happened'
             })
         };
     }

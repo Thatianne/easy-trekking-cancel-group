@@ -1,36 +1,44 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, ManyToMany } from 'typeorm';
-import { Group } from './group'
+import {
+    Entity,
+    PrimaryGeneratedColumn,
+    Column,
+    OneToMany,
+    CreateDateColumn,
+    UpdateDateColumn,
+    DeleteDateColumn,
+    ManyToMany
+} from 'typeorm';
+import { Group } from './group';
 
 @Entity()
 export class Trekking {
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn()
+    id: number;
 
-  @Column()
-  name: string;
+    @Column()
+    name: string;
 
-  @Column()
-  minPeople: number;
+    @Column()
+    minPeople: number;
 
-  @Column()
-  maxPeople: number;
+    @Column()
+    maxPeople: number;
 
-  @Column()
-  daysFormGroup: number;
+    @Column()
+    daysFormGroup: number;
 
-  @Column()
-  daysCompletePayment: number;
+    @Column()
+    daysCompletePayment: number;
 
-  @OneToMany(() => Group, (group) => group.trekking)
-  groups: Group[];
+    @OneToMany(() => Group, (group) => group.trekking)
+    groups: Group[];
 
-  @CreateDateColumn()
-  createdAt: Date;
+    @CreateDateColumn()
+    createdAt: Date;
 
-  @UpdateDateColumn()
-  updatedAt: Date;
+    @UpdateDateColumn()
+    updatedAt: Date;
 
-  @DeleteDateColumn({ select: false })
-  deletedAt?: Date;
-
+    @DeleteDateColumn({ select: false })
+    deletedAt?: Date;
 }
