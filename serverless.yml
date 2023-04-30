@@ -11,8 +11,8 @@ functions:
     events:
       - eventBridge:
           name: event-bridge-easy-trekking-cancel-group
-          description: Event bridge for change group status to cancel
-          schedule: rate(1 day)
+          description: Event bridge runned every day at mid nigth UTC+0 for change group status to cancel
+          schedule: cron(0 0 * * ? *)
           enabled: true
       - http:
           path: /
