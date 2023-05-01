@@ -19,7 +19,7 @@ const shouldCancelGroup = (group: Group, today: Date): boolean => {
 };
 
 const cancelGroups = async () => {
-    if (!AppDataSource.isConnected) {
+    if (!AppDataSource.isInitialized) {
         await AppDataSource.initialize();
     }
     const groupRepository = AppDataSource.getRepository(Group);
